@@ -1,0 +1,26 @@
+---
+galaxy_info:
+  role_name: linux_gaming_setup
+  namespace: tu_usuario_galaxy
+  author: Habid E. Manzur
+  description: Configure Debian and RHEL-based Linux workstations for gaming (NVIDIA, AMD, Intel, Vulkan, Wine, Steam, Lutris).
+  license: MIT
+  min_ansible_version: "2.15"
+  platforms:
+    - name: Debian
+      versions:
+        - bookworm
+        - trixie
+    - name: EL
+      versions:
+        - "9"
+  galaxy_tags:
+    - gaming
+    - linux
+    - nvidia
+    - amd
+    - vulkan
+    - steam
+    - workstation
+
+dependencies: []

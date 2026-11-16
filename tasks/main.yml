@@ -1,0 +1,14 @@
+---
+- name: Load OS family variables
+  ansible.builtin.include_vars: "family/{{ ansible_os_family | lower }}.yml"
+
+# TODO: Add support auto-detection.
+# TODO: Add support for other GPU vendors (e.g., Intel, AMD) and their respective driver installation tasks.
+
+- name: Abort if GPU vendor is unsupported or not detected
+  ansible.builtin.fail:
+    msg: "No compatible GPU vendor detected (current value: '{{ gaming_setup_vendor | default('undefined') }}')."
+  when: gaming_setup_vendor is undefined or gaming_setup_vendor not in ['nvidia']
+
+- name: Install drivers for {{ gaming_setup_vendor }}
+  ansible.builtin.include_tasks: "vendor/{{ gaming_setup_vendor }}.yml"

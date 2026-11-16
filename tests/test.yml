@@ -1,0 +1,29 @@
+---
+- name: Test gaming_setup role for NVIDIA GPU Vendor
+  hosts: localhost
+  vars:
+    gaming_setup_vendor: "nvidia"
+  roles:
+    - role: "ansible-role-linux-gaming-setup"
+
+# TODO: Add support for AMD / Intel and auto in the future
+
+# - name: Test gaming_setup role for AMD GPU Vendor
+#   hosts: localhost
+#   vars:
+#     gaming_setup_vendor: "amd"
+#   roles:
+#     - role: "ansible-role-linux-gaming-setup"
+
+# - name: Test gaming_setup role for Intel GPU Vendor
+#   hosts: localhost
+#   vars:
+#     gaming_setup_vendor: "intel"
+#   roles:
+#     - role: "ansible-role-linux-gaming-setup"
+#   ignore_errors: true
+
+# - name: Test gaming_setup role for Auto GPU Vendor Detection
+#   hosts: localhost
+#   roles:
+#     - role: "ansible-role-linux-gaming-setup"

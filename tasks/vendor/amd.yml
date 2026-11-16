@@ -1,0 +1,4 @@
+- name: Init
+  ansible.builtin.debug:
+    msg:
+      - "Installing AMD drivers for Linux"
